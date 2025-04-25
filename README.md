@@ -1,27 +1,29 @@
 # SansChef 🍽️ - Restaurant Discovery & Food Delivery Platform
 
-![SansChef Banner](./images/banner.png)
+![SansChef Banner](./images/logo.png)
 
 A modern food delivery application built with React that helps users discover and order from top-rated restaurants in their area.
 
 ## 🚀 Live Demo
 [Try SansChef Now](#) | [Video Walkthrough](#)
 
-## ✨ Features
+## 🚀 Features  
 
-### Core Features
-- 🏠 Interactive restaurant listings
-- 🔍 Advanced search & filters
-- 🛒 Seamless cart management
-- 🍔 Detailed restaurant pages
-- 🔐 Secure authentication
+### Core Functionality  
+| Feature | Description |  
+|---------|-------------|  
+| **Restaurant Listings** | Browse curated local eateries with ratings |  
+| **Advanced Filters** | Sort by cuisine, price range, or dietary needs |  
+| **Real-time Cart** | Add/remove items with instant price updates |  
+| **Menu Explorer** | Detailed dish pages with ingredients and pricing |  
 
-### UI Highlights
-- 🌙 Dark/light mode toggle
-- ✨ Smooth animations
-- 💬 AI-powered chatbot
-- 🌀 Shimmer loading effects
-- � Responsive design
+### UI/UX Highlights  
+- 🌙 **Dark/Light Mode** - Theme toggle with persistent settings  
+- 🌀 **Shimmer Effects** - Elegant loading states  
+- 🎠 **Interactive Carousels** - For featured restaurants  
+- 📱 **Fully Responsive** - Optimized for all devices  
+
+---
 
 ## 🛠️ Tech Stack
 
@@ -38,11 +40,41 @@ A modern food delivery application built with React that helps users discover an
 **Tools:**
 - Parcel (Bundler)
 - Git (Version Control)
-- Vercel (Hosting)
 
-## 📦 Installation
+## 🛠️ Development  
 
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/sandeep702/React-project.git
-   cd React-project
+### Prerequisites  
+- Node.js ≥ v16  
+- npm ≥ v8  
+
+### Setup  
+# Clone repository  
+git clone https://github.com/sandeep702/React-project.git  
+cd React-project  
+
+# Install dependencies  
+npm install  
+
+# Configure environment variables  
+cp .env.example .env  
+# Add your Clerk keys in the .env file  
+
+# Start dev server (port 1234)  
+npm start  
+
+🤝 Contributing
+1. Fork the project
+2. Create a feature branch (git checkout -b feature/AmazingFeature)
+3. Commit changes (git commit -m 'Add feature')
+4. Push (git push origin feature/AmazingFeature)
+
+### Open a Pull Request
+
+📜 License
+Distributed under the MIT License.
+See LICENSE for details.
+
+📬 Contact
+Sandeep Kmbz
+GitHub
+Twitter
