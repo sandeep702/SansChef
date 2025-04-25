@@ -1,7 +1,5 @@
 # SansChef 🍽️ - Restaurant Discovery & Food Delivery Platform
 
-![SansChef Banner](./images/logo.svg)
-
 A modern food delivery application built with React that helps users discover and order from top-rated restaurants in their area.
 
 ## 🚀 Live Demo
