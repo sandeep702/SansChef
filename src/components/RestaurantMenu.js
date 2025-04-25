@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
 import UIShimmer from "./UIShimmer";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { MENU_API_URL } from "../utils/constants";
 
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState(null);
-  // cartItems now stores quantities by item ID
   const [cartItems, setCartItems] = useState({});
   const [expandedSections, setExpandedSections] = useState({});
   const [expandedItems, setExpandedItems] = useState({});
   const { resId } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchMenu();
-  }, []);
+  }, [resId]);
 
   const fetchMenu = async () => {
     const data = await fetch(MENU_API_URL(resId));
@@ -23,7 +23,6 @@ const RestaurantMenu = () => {
 
   if (resInfo === null) return <UIShimmer />;
 
-  // Restaurant info
   const info = resInfo?.cards?.[2]?.card?.card?.info || {};
   const {
     name,
@@ -39,7 +38,6 @@ const RestaurantMenu = () => {
     ? `https://media-assets.swiggy.com/swiggy/image/upload/${cloudinaryImageId}`
     : "";
 
-  // Menu sections
   const menuSections =
     resInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards ||
     resInfo?.cards?.[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards ||
@@ -59,7 +57,6 @@ const RestaurantMenu = () => {
     }));
   };
 
-  // Increase quantity
   const handleAddToCart = (itemId) => {
     setCartItems((prev) => ({
       ...prev,
@@ -67,7 +64,6 @@ const RestaurantMenu = () => {
     }));
   };
 
-  // Decrease quantity
   const handleRemoveFromCart = (itemId) => {
     setCartItems((prev) => {
       const updated = { ...prev };
@@ -88,8 +84,18 @@ const RestaurantMenu = () => {
   const truncateText = (text, maxLength = 100) =>
     text?.length > maxLength ? text.slice(0, maxLength) + "..." : text;
 
-  // Total items in cart
   const totalItems = Object.values(cartItems).reduce((sum, qty) => sum + qty, 0);
+
+  const handleCheckout = () => {
+    navigate("/cart", { 
+      state: { 
+        cartItems, 
+        menuSections: menuSections.filter(section => 
+          section?.card?.card?.itemCards?.length > 0
+        )
+      } 
+    });
+  };
 
   return (
     <div className="max-w-7xl mx-auto mt-10 p-6">
@@ -205,7 +211,6 @@ const RestaurantMenu = () => {
                         onMouseOver={() => toggleItemDescription(id)}
                         onMouseOut={() => toggleItemDescription(id)}
                       >
-                        {/* Item Image */}
                         <div className="w-24 h-24 shrink-0 overflow-hidden rounded-xl">
                           {itemImage && (
                             <img
@@ -216,7 +221,6 @@ const RestaurantMenu = () => {
                           )}
                         </div>
 
-                        {/* Item Details */}
                         <div className="flex-1 text-gray-700">
                           <h4 className="text-[1.1rem] font-semibold">{name}</h4>
                           <p className="text-[18px] font-semibold text-gray-600 mt-2 mb-2">
@@ -250,7 +254,6 @@ const RestaurantMenu = () => {
                             </p>
                           )}
 
-                          {/* Quantity Controls */}
                           <div className="mt-4 flex items-center gap-3">
                             <button
                               onClick={(e) => {
@@ -293,11 +296,14 @@ const RestaurantMenu = () => {
       {/* Cart Feedback */}
       <div className="fixed bottom-4 right-4 z-50">
         {totalItems > 0 && (
-          <div className="bg-orange-600 text-white px-4 py-3 rounded-lg shadow-lg text-sm flex flex-col gap-2 animate-slide-up">
+          <div className="bg-orange-600 text-white px-4 py-3 rounded-lg shadow-lg text-sm flex flex-col gap-2">
             <div>🛒 {totalItems} item{totalItems > 1 && "s"} in cart</div>
-            <p className="bg-white text-orange-600 font-semibold px-3 py-1 rounded-md text-xs hover:bg-orange-100 transition self-start cursor-pointer">
-              Checkout in Cart
-            </p>
+            <button
+              onClick={handleCheckout}
+              className="bg-white text-orange-600 font-semibold px-3 py-1 rounded-md text-xs hover:bg-orange-100 transition self-start"
+            >
+              Checkout
+            </button>
             <button
               onClick={handleClearCart}
               className="text-xs mt-1 text-white underline hover:text-yellow-200"
