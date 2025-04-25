@@ -69,7 +69,7 @@ export default function ImageCarousel({ listOfRestaurants, setFilteredResturant 
 
   {/* Animated CTA Button */}
   <div className="text-lg font-semibold text-green-700 mb-4 group cursor-pointer hover:bg-green-100/20 p-2 rounded-lg">
-    <span className="inline-block group-hover:translate-y-1">👇</span> Tap below to explore our 
+    <span className="inline-block text-[60px] group-hover:translate-y-1">👇</span> Tap below to explore our 
     <span className="underline text-blue-700 hover:text-blue-500 ml-1">
       Top Rated Restaurants
     </span>
