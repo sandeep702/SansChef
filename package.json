@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/sandeep702/React-project#readme",
   "devDependencies": {
+    "buffer": "^6.0.3",
     "parcel": "^2.9.2",
     "postcss": "^8.4.49",
     "prettier": "3.5.0",
@@ -26,12 +27,14 @@
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.25.5",
+    "axios": "^1.9.0",
     "daisyui": "^5.0.9",
     "dotenv": "^16.4.7",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.5.0",
     "lucide-react": "^0.483.0",
+    "md5": "^2.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.5.0",

@@ -3,6 +3,7 @@ import ResCard from "./ResCard";
 import resList from "../utils/mockData";
 import UIShimmer from "./UIShimmer";
 import Body2 from "./Body2";
+
 import Filters from "./Filters";
 import ImageCarousel from "./ImageCarousel"; 
 import { Link } from "react-router-dom";

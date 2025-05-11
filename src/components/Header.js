@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import { SignedIn, SignedOut, SignInButton, SignOutButton , useUser} from "@clerk/clerk-react"; // Clerk Auth
+import { SignedIn, SignedOut, SignInButton, SignOutButton, useUser } from "@clerk/clerk-react";
 import logo from "../../images/colored_logo.svg";
-import Theme from "./Theme"; // Theme switcher
-import { FaUserCircle } from "react-icons/fa";
+import Theme from "./Theme";
 
 const Header = () => {
   const { user } = useUser();
@@ -24,33 +23,38 @@ const Header = () => {
           <li><Link to="/grocery">Grocery</Link></li>
  
           <div className="flex items-center space-x-4">
-            {/* User Icon and Name (Only if Signed In) */}
             <SignedIn>
-              <div className="flex items-center italic font-serif userName">
-                <FaUserCircle className="text-2xl mr-2" />
-                <span className="font-semibold font-xl">{user?.fullName || "User"}</span>
+              <div className="flex items-center gap-2">
+                {user?.imageUrl && (
+                  <img 
+                    src={user.imageUrl} 
+                    alt="Profile" 
+                    className="w-8 h-8 rounded-full object-cover"
+                  />
+                )}
+                <div className="text-left">
+                  <p className="font-bold font-sans text-orange-600 text-sm">{user?.fullName}</p>
+                  <p className="text-xs font-serif font-semibold text-gray-400">{user?.primaryEmailAddress?.emailAddress}</p>
+                </div>
               </div>
             </SignedIn>
-          {/* Login/Logout with Clerk - More Interactive Buttons */}
-         
-          <SignedOut>
-            <SignInButton mode="modal">
-              <button className="px-6 mr-4 py-2 bg-gradient-to-r from-green-500 to-green-700 text-white font-semibold rounded-2xl shadow-sm transition-all duration-300 hover:from-green-600 hover:to-green-800 hover:scale-105 active:scale-95">
-                Login
-              </button>
-            </SignInButton>
-          </SignedOut>
+          
+            <SignedOut>
+              <SignInButton mode="modal">
+                <button className="px-6 mr-4 py-2 bg-gradient-to-r from-green-500 to-green-700 text-white font-semibold rounded-2xl shadow-sm transition-all duration-300 hover:from-green-600 hover:to-green-800 hover:scale-105 active:scale-95">
+                  Login
+                </button>
+              </SignInButton>
+            </SignedOut>
       
-
-          <SignedIn>
-            <SignOutButton>
-              <button className="px-6 py-2 mr-4 bg-gradient-to-r from-red-500 to-red-700 text-white font-semibold rounded-2xl shadow-sm transition-all duration-300 hover:from-red-600 hover:to-red-800 hover:scale-105 active:scale-95">
-                Logout
-              </button>
-            </SignOutButton>
-          </SignedIn>
+            <SignedIn>
+              <SignOutButton>
+                <button className="px-6 py-2 mr-4 bg-gradient-to-r from-red-500 to-red-700 text-white font-semibold rounded-2xl shadow-sm transition-all duration-300 hover:from-red-600 hover:to-red-800 hover:scale-105 active:scale-95">
+                  Logout
+                </button>
+              </SignOutButton>
+            </SignedIn>
           </div>
-          {/* Theme Switcher */}
           <Theme />
         </ul>
       </div>
@@ -59,5 +63,3 @@ const Header = () => {
 };
 
 export default Header;
-
-

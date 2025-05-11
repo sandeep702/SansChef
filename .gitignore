@@ -1,3 +1,8 @@
-/node_modules
-/dist
-.parcel-cache
+
+# .gitignore
+
+.env.local
+.parcel-cache/
+dist/
+node_modules/
+.env
