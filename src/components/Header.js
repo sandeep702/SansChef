@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { SignedIn, SignedOut, SignInButton, SignOutButton, useUser } from "@clerk/clerk-react";
-import logo from "../../images/colored_logo.svg";
+import logo from "../../public/images/colored_logo.svg";
 import Theme from "./Theme";
 
 const Header = () => {

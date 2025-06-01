@@ -2,11 +2,11 @@ import * as React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 
-import img1 from "../../images/crousel.jpg"; 
-import img2 from "../../images/img2.jpg";
-import img3 from "../../images/img3.jpg"; 
-import img4 from "../../images/img4.webp";
-import img5 from "../../images/img5.avif";
+import img1 from "../../public/images/crousel.avif"; 
+import img2 from "../../public/images/img2.avif";
+import img3 from "../../public/images/img3.avif"; 
+import img4 from "../../public/images/img4.avif";
+import img5 from "../../public/images/img5.avif";
 import TopRatedFilter from "./TopRatedFilter";
 
 const images = [img1, img2, img3, img4 , img5];

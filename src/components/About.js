@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import mcdonalds from "../../images/mcdonalds.png";
-import subway from "../../images/subway.png";
-import kfc from "../../images/kfc.png";
-import dominos from "../../images/dominos.png";
-import burger from "../../images/burger.jpeg";
+import mcdonalds from "../../public/images/mcdonalds.avif";
+import subway from "../../public/images/subway.avif";
+import kfc from "../../public/images/kfc.avif";
+import dominos from "../../public/images/img2.webp";
+import burger from "../../public/images/burger.avif";
 import Footer from "./Footer";
 
 import { testimonials } from "../utils/testimonial";

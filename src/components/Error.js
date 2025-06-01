@@ -1,5 +1,5 @@
-import { LOGO_URL } from "../utils/constants"; 
-import { useRouteError } from "react-router";
+import { LOGO_URL } from "../utils/constants";
+ import { useRouteError } from "react-router-dom";
 const Error =()=>{
     const err = useRouteError();
 console.log(err);

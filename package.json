@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "this is my new  journey with react",
   "scripts": {
-    "start": "echo \"wait for Server my love 😘\" &&  parcel index.html --port 1234  ",
+    "start": "echo \"wait for Server my love 😘\" &&  parcel index.html --port 10000  ",
     "build": "parcel build index.html",
     "test": "jest"
   },
@@ -40,7 +40,7 @@
     "react-icons": "^5.5.0",
     "react-router-dom": "^6.14.2"
   },
-  "main": "tailwind.config.js",
+  
   "keywords": [],
   "type": "commonjs"
 }
