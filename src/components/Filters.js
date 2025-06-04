@@ -72,7 +72,7 @@ const Filters = ({ listOfRestaurants, setFilteredRestaurants }) => {
           </select>
           <button className={sharedStyles} onClick={filterByFastDelivery}>Fast Delivery</button>
           <button className={sharedStyles}>Favourites ❤️</button>
-          <button className={sharedStyles} onClick={filterByRating}>Ratings 4.0+</button>
+          <button className={sharedStyles} onClick={filterByRating}>Ratings 4+</button>
           <button className={sharedStyles} onClick={filterByVeg}>Pure Veg 🥬</button>
           <button className={sharedStyles} onClick={filterByOffers}>Offers 🎉</button>
           <button className={sharedStyles} onClick={() => filterByPrice(300, 600)}>Rs. 300–Rs. 600</button>
