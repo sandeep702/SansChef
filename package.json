@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "this is my new  journey with react",
   "scripts": {
-    "start": "echo \"wait for Server my love 😘\" &&  parcel index.html --port 10000  ",
+    "start": "echo \"wait for Server my love 😘\" &&  parcel index.html   ",
     "build": "parcel build index.html",
     "test": "jest"
   },
